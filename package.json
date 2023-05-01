@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "description": "[![Actions Status](https://github.com/Frerarj/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Frerarj/frontend-project-44/actions)",
-  "main": "index.js",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,5 +14,8 @@
     "url": "git+https://github.com/Frerarj/frontend-project-44"
   },
   "author": "Anastasia Simanova (Frerarj)",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "make": "^0.8.1"
+  }
 }
