@@ -5,7 +5,8 @@
   "description": "[![Actions Status](https://github.com/Frerarj/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Frerarj/frontend-project-44/actions)",
   "bin": {
     "brain-games": "bin/brain-games.js",
-    "brain-even": "bin/brain-even.js"
+    "brain-even": "bin/brain-even.js",
+    "brain-calc": "bin/brain-calc.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +18,7 @@
   "author": "Anastasia Simanova (Frerarj)",
   "license": "ISC",
   "dependencies": {
+    "lodash": "^4.17.21",
     "make": "^0.8.1",
     "readline-sync": "^1.4.10"
   },
