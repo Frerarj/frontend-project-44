@@ -8,21 +8,24 @@ const getRandomNumber = () => {
   return randomNumber;
 };
 
-const brainEvenGame = () => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const findGCD = (firstNumber, secondNumber) => {
+  if (secondNumber !== 0) {
+    const divisionRemainder = firstNumber % secondNumber;
+    return findGCD(secondNumber, divisionRemainder);
+  } return firstNumber;
+};
+
+const brainGcdGame = () => {
+  console.log('Find the greatest common divisor of given numbers.');
   for (let i = 0; i < 3; i += 1) {
     const number = getRandomNumber();
-    console.log(`Question: ${number}`);
+    const secondNumber = getRandomNumber();
+    console.log(`Question: ${number} ${secondNumber}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    let rightAnswer = '';
-    if (number % 2 === 0) {
-      rightAnswer = 'yes';
-    } else {
-      rightAnswer = 'no';
-    }
+    const rightAnswer = findGCD(number, secondNumber);
 
-    if (userAnswer === rightAnswer) {
+    if (userAnswer == rightAnswer) {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`);
@@ -32,4 +35,4 @@ const brainEvenGame = () => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export default brainEvenGame;
+export default brainGcdGame;
