@@ -17,17 +17,20 @@ To install the *Brain Games* project, you need to have [`Node.js`](https://nod
 Once you have `Node.js` installed, follow these steps:
 
 1. Clone this repository to your local machine.
+   ```
+   git clone git@github.com:Frerarj/frontend-project-44.git
+   ```
 2. Navigate to the root folder of the project in your terminal or command prompt.
-3. Run the `make install` command.
+   ```
+   cd frontend-project-44
+   ```
+3. Run the `make install` and `sudo npm link` commands.
+   ```
+   make install
+   sudo npm link
+   ```
 4. Once the installation is complete, run any of the games by typing their respective commands in your terminal or command prompt.
    Refer to the command list below.
-
-```
-git clone git@github.com:Frerarj/frontend-project-44.git
-cd frontend-project-44
-make install
-sudo npm link
-```
 
 [![asciicast](https://asciinema.org/a/E2Y8RdZYqHMdnc9RViTDWzxws.svg)](https://asciinema.org/a/E2Y8RdZYqHMdnc9RViTDWzxws)
 
