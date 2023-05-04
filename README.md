@@ -29,12 +29,14 @@ make install
 sudo npm link
 ```
 
+[![asciicast](https://asciinema.org/a/E2Y8RdZYqHMdnc9RViTDWzxws.svg)](https://asciinema.org/a/E2Y8RdZYqHMdnc9RViTDWzxws)
+
 ## Which games can be run
 
 | Game | Description | Demo |
 | --- | --- | --- |
-| `brain-calc` | Do addition, subtraction, or multiplication operations. | |
-| `brain-progression` | Find the missing number in an arithmetic sequence. | |
-| `brain-even` | Determine whether a number is even or odd. | |
-| `brain-gcd` | Calculate the GCD for two given numbers. | |
-| `brain-prime` | Determine whether a number is prime or not. | |
+| `brain-calc` | Do addition, subtraction, or multiplication operations. | [![asciicast](https://asciinema.org/a/582513.svg)](https://asciinema.org/a/582513) |
+| `brain-progression` | Find the missing number in an arithmetic sequence. | [![asciicast](https://asciinema.org/a/582514.svg)](https://asciinema.org/a/582514) |
+| `brain-even` | Determine whether a number is even or odd. | [![asciicast](https://asciinema.org/a/582515.svg)](https://asciinema.org/a/582515) |
+| `brain-gcd` | Calculate the GCD for two given numbers. | [![asciicast](https://asciinema.org/a/582516.svg)](https://asciinema.org/a/582516) |
+| `brain-prime` | Determine whether a number is prime or not. | [![asciicast](https://asciinema.org/a/582519.svg)](https://asciinema.org/a/582519) |
