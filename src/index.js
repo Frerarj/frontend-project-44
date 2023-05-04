@@ -1,17 +1,23 @@
 import readlineSync from 'readline-sync';
 import getUserName, { userName } from './cli.js';
 
-const gameInterface = (gameRules) => {
-  console.log('Welcome to the Brain Games!');
+export const getRandomNumber = () => {
+  const randomNumber = Math.round(Math.random() * 10);
+  return randomNumber;
+};
+
+const gameInterface = (gameRules, getGameResult) => {
   getUserName();
   console.log(gameRules);
   for (let i = 0; i < 3; i += 1) {
-    // Логика вопроса и высчитывания верного ответа
+    const [question, rightAnswer] = getGameResult();
+    console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer == rightAnswer) {
+    const finalRightAnswer = String(rightAnswer);
+    if (userAnswer === finalRightAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${finalRightAnswer}'.\nLet's try again, ${userName}!`);
       return;
     }
   }

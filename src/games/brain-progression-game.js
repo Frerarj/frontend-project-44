@@ -1,12 +1,6 @@
-import readlineSync from 'readline-sync';
-import getUserName, { userName } from '../cli.js';
+import gameInterface, { getRandomNumber } from '../index.js';
 
-getUserName();
-
-const getRandomNumber = () => {
-  const randomNumber = Math.round(Math.random() * 10);
-  return randomNumber;
-};
+const gameRules = 'What number is missing in the progression?';
 
 const progressionLength = 10;
 
@@ -33,21 +27,15 @@ const getProgressionElement = (progressionResult) => {
   return result;
 };
 
-const brainProgressionGame = () => {
-  console.log('What number is missing in the progression?');
-  for (let i = 0; i < 3; i += 1) {
-    const [rightAnswer, progressionString] = getProgressionElement(countProgression());
-    console.log(`Question: ${progressionString}`);
-    const userAnswer = readlineSync.question('Your answer: ');
+const getGameResult = () => {
+  const [rightAnswer, progressionString] = getProgressionElement(countProgression());
+  const question = `${progressionString}`;
 
-    if (userAnswer == rightAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`);
-      return;
-    }
-  }
-  console.log(`Congratulations, ${userName}!`);
+  return [question, rightAnswer];
+};
+
+const brainProgressionGame = () => {
+  gameInterface(gameRules, getGameResult);
 };
 
 export default brainProgressionGame;

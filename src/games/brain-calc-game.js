@@ -1,49 +1,37 @@
 import _ from 'lodash';
-import readlineSync from 'readline-sync';
-import getUserName, { userName } from '../cli.js';
+import gameInterface, { getRandomNumber } from '../index.js';
 
-getUserName();
+const gameRules = 'What is the result of the expression?';
 
-const getRandomNumber = () => {
-  const randomNumber = Math.round(Math.random() * 10);
-  return randomNumber;
+const getGameResult = () => {
+  const mathSigns = ['+', '-', '*'];
+  const randomMathSign = _.sample(mathSigns);
+  const number = getRandomNumber();
+  const secondNumber = getRandomNumber();
+
+  const question = `${number} ${randomMathSign} ${secondNumber}`;
+  let rightAnswer;
+
+  switch (randomMathSign) {
+    case '+':
+      rightAnswer = number + secondNumber;
+      break;
+    case '-':
+      rightAnswer = number - secondNumber;
+      break;
+    case '*':
+      rightAnswer = number * secondNumber;
+      break;
+    default:
+      rightAnswer = 0;
+      break;
+  }
+
+  return [question, rightAnswer];
 };
 
 const brainCalcGame = () => {
-  const mathSigns = ['+', '-', '*'];
-  const randomMathSign = _.sample(mathSigns);
-  console.log('What is the result of the expression?');
-  for (let i = 0; i < 3; i += 1) {
-    const number = getRandomNumber();
-    const secondNumber = getRandomNumber();
-    console.log(`Question: ${number} ${randomMathSign} ${secondNumber}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-
-    let rightAnswer;
-
-    switch (randomMathSign) {
-      case '+':
-        rightAnswer = number + secondNumber;
-        break;
-      case '-':
-        rightAnswer = number - secondNumber;
-        break;
-      case '*':
-        rightAnswer = number * secondNumber;
-        break;
-      default:
-        rightAnswer = 0;
-        break;
-    }
-
-    if (userAnswer == rightAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`);
-      return;
-    }
-  }
-  console.log(`Congratulations, ${userName}!`);
+  gameInterface(gameRules, getGameResult);
 };
 
 export default brainCalcGame;
