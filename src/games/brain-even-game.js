@@ -16,8 +16,8 @@ const getGameResult = () => {
   return [question, rightAnswer];
 };
 
-const brainEvenGame = () => {
+const runBrainEvenGame = () => {
   gameInterface(gameRules, getGameResult);
 };
 
-export default brainEvenGame;
+export default runBrainEvenGame;

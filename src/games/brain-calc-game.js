@@ -30,8 +30,8 @@ const getGameResult = () => {
   return [question, rightAnswer];
 };
 
-const brainCalcGame = () => {
+const runBrainCalcGame = () => {
   gameInterface(gameRules, getGameResult);
 };
 
-export default brainCalcGame;
+export default runBrainCalcGame;

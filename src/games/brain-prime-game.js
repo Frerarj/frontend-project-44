@@ -21,8 +21,8 @@ const getGameResult = () => {
   return [question, rightAnswer];
 };
 
-const brainPrimeGame = () => {
+const runBrainPrimeGame = () => {
   gameInterface(gameRules, getGameResult);
 };
 
-export default brainPrimeGame;
+export default runBrainPrimeGame;

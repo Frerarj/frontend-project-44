@@ -34,8 +34,8 @@ const getGameResult = () => {
   return [question, rightAnswer];
 };
 
-const brainProgressionGame = () => {
+const runBrainProgressionGame = () => {
   gameInterface(gameRules, getGameResult);
 };
 
-export default brainProgressionGame;
+export default runBrainProgressionGame;
