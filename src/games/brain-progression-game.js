@@ -1,4 +1,5 @@
-import gameInterface, { getRandomNumber } from '../index.js';
+import runEngine from '../index.js';
+import getRandomNumber from '../utils/getRandomNumber.js';
 
 const gameRules = 'What number is missing in the progression?';
 
@@ -35,7 +36,7 @@ const getGameResult = () => {
 };
 
 const runBrainProgressionGame = () => {
-  gameInterface(gameRules, getGameResult);
+  runEngine(gameRules, getGameResult);
 };
 
 export default runBrainProgressionGame;

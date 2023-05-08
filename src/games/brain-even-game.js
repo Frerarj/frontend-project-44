@@ -1,4 +1,5 @@
-import gameInterface, { getRandomNumber } from '../index.js';
+import runEngine from '../index.js';
+import getRandomNumber from '../utils/getRandomNumber.js';
 
 const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -17,7 +18,7 @@ const getGameResult = () => {
 };
 
 const runBrainEvenGame = () => {
-  gameInterface(gameRules, getGameResult);
+  runEngine(gameRules, getGameResult);
 };
 
 export default runBrainEvenGame;

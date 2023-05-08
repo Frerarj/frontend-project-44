@@ -1,5 +1,6 @@
 import _ from 'lodash';
-import gameInterface, { getRandomNumber } from '../index.js';
+import runEngine from '../index.js';
+import getRandomNumber from '../utils/getRandomNumber.js';
 
 const gameRules = 'What is the result of the expression?';
 
@@ -31,7 +32,7 @@ const getGameResult = () => {
 };
 
 const runBrainCalcGame = () => {
-  gameInterface(gameRules, getGameResult);
+  runEngine(gameRules, getGameResult);
 };
 
 export default runBrainCalcGame;

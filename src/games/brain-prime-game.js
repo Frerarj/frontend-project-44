@@ -1,4 +1,5 @@
-import gameInterface, { getRandomNumber } from '../index.js';
+import runEngine from '../index.js';
+import getRandomNumber from '../utils/getRandomNumber.js';
 
 const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -22,7 +23,7 @@ const getGameResult = () => {
 };
 
 const runBrainPrimeGame = () => {
-  gameInterface(gameRules, getGameResult);
+  runEngine(gameRules, getGameResult);
 };
 
 export default runBrainPrimeGame;
