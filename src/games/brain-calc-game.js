@@ -4,35 +4,38 @@ import getRandomNumber from '../utils/getRandomNumber.js';
 
 const gameRules = 'What is the result of the expression?';
 
-const getGameResult = () => {
+const getRandomOperator = () => {
   const mathSigns = ['+', '-', '*'];
   const randomMathSign = _.sample(mathSigns);
+
+  return randomMathSign;
+};
+
+const calculate = (number, secondNumber, operator) => {
+  switch (operator) {
+    case '+':
+      return number + secondNumber;
+    case '-':
+      return number - secondNumber;
+    case '*':
+      return number * secondNumber;
+    default:
+      throw new Error(`Unknown operator: '${operator}'`);
+  }
+};
+
+const generateRound = () => {
   const number = getRandomNumber();
   const secondNumber = getRandomNumber();
-
-  const question = `${number} ${randomMathSign} ${secondNumber}`;
-  let rightAnswer;
-
-  switch (randomMathSign) {
-    case '+':
-      rightAnswer = number + secondNumber;
-      break;
-    case '-':
-      rightAnswer = number - secondNumber;
-      break;
-    case '*':
-      rightAnswer = number * secondNumber;
-      break;
-    default:
-      rightAnswer = 0;
-      break;
-  }
+  const operator = getRandomOperator();
+  const question = `${number} ${operator} ${secondNumber}`;
+  const rightAnswer = String(calculate(number, secondNumber, operator));
 
   return [question, rightAnswer];
 };
 
 const runBrainCalcGame = () => {
-  runEngine(gameRules, getGameResult);
+  runEngine(gameRules, generateRound);
 };
 
 export default runBrainCalcGame;

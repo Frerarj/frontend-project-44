@@ -13,7 +13,7 @@ const isPrime = (num) => {
   return num > 1;
 };
 
-const getGameResult = () => {
+const generateRound = () => {
   const randomNumber = getRandomNumber();
 
   const question = `${randomNumber}`;
@@ -23,7 +23,7 @@ const getGameResult = () => {
 };
 
 const runBrainPrimeGame = () => {
-  runEngine(gameRules, getGameResult);
+  runEngine(gameRules, generateRound);
 };
 
 export default runBrainPrimeGame;

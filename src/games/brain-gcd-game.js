@@ -10,7 +10,7 @@ const findGCD = (firstNumber, secondNumber) => {
   } return firstNumber;
 };
 
-const getGameResult = () => {
+const generateRound = () => {
   const number = getRandomNumber();
   const secondNumber = getRandomNumber();
 
@@ -21,7 +21,7 @@ const getGameResult = () => {
 };
 
 const runBrainGcdGame = () => {
-  runEngine(gameRules, getGameResult);
+  runEngine(gameRules, generateRound);
 };
 
 export default runBrainGcdGame;

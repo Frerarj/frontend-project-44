@@ -3,7 +3,7 @@ import getRandomNumber from '../utils/getRandomNumber.js';
 
 const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const getGameResult = () => {
+const generateRound = () => {
   const number = getRandomNumber();
   const question = `${number}`;
   let rightAnswer;
@@ -18,7 +18,7 @@ const getGameResult = () => {
 };
 
 const runBrainEvenGame = () => {
-  runEngine(gameRules, getGameResult);
+  runEngine(gameRules, generateRound);
 };
 
 export default runBrainEvenGame;

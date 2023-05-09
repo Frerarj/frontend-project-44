@@ -28,7 +28,7 @@ const getProgressionElement = (progressionResult) => {
   return result;
 };
 
-const getGameResult = () => {
+const generateRound = () => {
   const [rightAnswer, progressionString] = getProgressionElement(countProgression());
   const question = `${progressionString}`;
 
@@ -36,7 +36,7 @@ const getGameResult = () => {
 };
 
 const runBrainProgressionGame = () => {
-  runEngine(gameRules, getGameResult);
+  runEngine(gameRules, generateRound);
 };
 
 export default runBrainProgressionGame;
