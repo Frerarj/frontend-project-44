@@ -30,10 +30,10 @@ const getProgressionElement = (progressionResult) => {
 
 const generateRound = () => {
   const progression = countProgression();
-  const [rightAnswer, progressionString] = String(getProgressionElement(progression));
+  const [rightAnswer, progressionString] = getProgressionElement(progression);
   const question = `${progressionString}`;
 
-  return [question, rightAnswer];
+  return [question, String(rightAnswer)];
 };
 
 const runBrainProgressionGame = () => {
