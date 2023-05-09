@@ -29,7 +29,8 @@ const getProgressionElement = (progressionResult) => {
 };
 
 const generateRound = () => {
-  const [rightAnswer, progressionString] = getProgressionElement(countProgression());
+  const progression = countProgression();
+  const [rightAnswer, progressionString] = String(getProgressionElement(progression));
   const question = `${progressionString}`;
 
   return [question, rightAnswer];
