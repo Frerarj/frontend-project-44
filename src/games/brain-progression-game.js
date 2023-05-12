@@ -3,37 +3,25 @@ import getRandomInRange from '../utils/getRandomInRange.js';
 
 const gameRules = 'What number is missing in the progression?';
 
-const progressionLength = 10;
-
-const getRandomProgressionElement = () => {
-  const randomElement = Math.round(Math.random() * (progressionLength - 1));
-  return randomElement;
-};
-
-const countProgression = () => {
-  const startPoint = getRandomInRange(0, 10);
-  const progressionResult = [startPoint];
-  for (let i = 0; i < progressionLength - 1; i += 1) {
-    const step = 2;
-    progressionResult.push(progressionResult[i] + step);
+const generateProgression = (startPoint, step, progressionLength) => {
+  const progression = [];
+  for (let i = 0; i < progressionLength; i += 1) {
+    progression.push(startPoint + step * i);
   }
-  return progressionResult;
+  return progression;
 };
 
-const getProgressionElement = (progressionResult) => {
-  const progressionElement = getRandomProgressionElement();
-  const result = progressionResult.splice(progressionElement, 1, '..');
-  const progressionString = progressionResult.join(' ');
-  result.push(progressionString);
-  return result;
-};
+const progressionLength = 10;
+const step = 2;
+const startPoint = getRandomInRange(0, 10);
 
 const generateRound = () => {
-  const progression = countProgression();
-  const [rightAnswer, progressionString] = getProgressionElement(progression);
-  const question = `${progressionString}`;
-
-  return [question, String(rightAnswer)];
+  const progression = generateProgression(startPoint, step, progressionLength);
+  const hiddenIndex = getRandomInRange(0, progressionLength - 1);
+  const rightAnswer = String(progression[hiddenIndex]);
+  progression[hiddenIndex] = '..';
+  const question = progression.join(' ');
+  return [question, rightAnswer];
 };
 
 const runBrainProgressionGame = () => {
