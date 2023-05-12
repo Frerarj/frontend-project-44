@@ -1,5 +1,5 @@
 import runEngine from '../index.js';
-import getRandomNumber from '../utils/getRandomNumber.js';
+import getRandomInRange from '../utils/getRandomInRange.js';
 
 const gameRules = 'What number is missing in the progression?';
 
@@ -11,7 +11,7 @@ const getRandomProgressionElement = () => {
 };
 
 const countProgression = () => {
-  const startPoint = getRandomNumber();
+  const startPoint = getRandomInRange(0, 10);
   const progressionResult = [startPoint];
   for (let i = 0; i < progressionLength - 1; i += 1) {
     const step = 2;

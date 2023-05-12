@@ -1,14 +1,11 @@
-import _ from 'lodash';
 import runEngine from '../index.js';
-import getRandomNumber from '../utils/getRandomNumber.js';
+import getRandomInRange from '../utils/getRandomInRange.js';
 
 const gameRules = 'What is the result of the expression?';
 
 const getRandomOperator = () => {
-  const mathSigns = ['+', '-', '*'];
-  const randomMathSign = _.sample(mathSigns);
-
-  return randomMathSign;
+  const operators = ['+', '*', '-'];
+  return operators[getRandomInRange(0, operators.length - 1)];
 };
 
 const calculate = (number, secondNumber, operator) => {
@@ -25,8 +22,8 @@ const calculate = (number, secondNumber, operator) => {
 };
 
 const generateRound = () => {
-  const number = getRandomNumber();
-  const secondNumber = getRandomNumber();
+  const number = getRandomInRange(0, 100);
+  const secondNumber = getRandomInRange(0, 100);
   const operator = getRandomOperator();
   const question = `${number} ${operator} ${secondNumber}`;
   const rightAnswer = String(calculate(number, secondNumber, operator));

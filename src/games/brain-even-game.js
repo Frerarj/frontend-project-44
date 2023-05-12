@@ -1,5 +1,5 @@
 import runEngine from '../index.js';
-import getRandomNumber from '../utils/getRandomNumber.js';
+import getRandomInRange from '../utils/getRandomInRange.js';
 
 const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -11,7 +11,7 @@ const isEven = (number) => {
 };
 
 const generateRound = () => {
-  const number = getRandomNumber();
+  const number = getRandomInRange(0, 100);
   const question = `${number}`;
   const rightAnswer = isEven(number);
 
