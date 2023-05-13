@@ -14,11 +14,10 @@ const isPrime = (num) => {
 };
 
 const generateRound = () => {
-  const randomNumber = getRandomInRange(0, 10);
-
-  const question = `${randomNumber}`;
+  const randomNumber = getRandomInRange(0, 45);
   const rightAnswer = isPrime(randomNumber) ? 'yes' : 'no';
 
+  const question = `${randomNumber}`;
   return [question, rightAnswer];
 };
 
