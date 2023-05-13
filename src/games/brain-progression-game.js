@@ -11,11 +11,11 @@ const generateProgression = (startPoint, step, progressionLength) => {
   return progression;
 };
 
-const progressionLength = 10;
-const step = 2;
-const startPoint = getRandomInRange(0, 10);
-
 const generateRound = () => {
+  const progressionLength = 10;
+  const step = 2;
+  const startPoint = getRandomInRange(0, 10);
+
   const progression = generateProgression(startPoint, step, progressionLength);
   const hiddenIndex = getRandomInRange(0, progressionLength - 1);
   const rightAnswer = String(progression[hiddenIndex]);
